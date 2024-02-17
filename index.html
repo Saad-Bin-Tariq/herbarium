@@ -35,7 +35,6 @@
         <script src="js/leaflet.markercluster.js"></script>
         <script src="data/nust_not_final_1.js"></script>
         <script src="data/PAK_adm2_2.js"></script>
-        <!-- https://raw.githubusercontent.com/Saad-Bin-Tariq/aiaware_cdn/main/uploads/nust_not_final_1.js -->
         <script>
         var highlightLayer;
         function highlightFeature(e) {
@@ -89,14 +88,14 @@
         }
         map.createPane('pane_ss_0');
         map.getPane('pane_ss_0').style.zIndex = 400;
-        var layer_ss_0 = L.tileLayer('https://mt0.google.com/vt/lyrs=p&x={x}&y={y}&z={z}&hl=en', {
+        var layer_ss_0 = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             pane: 'pane_ss_0',
             opacity: 1.0,
-            attribution: '',
+            attribution: '© OpenStreetMap contributors',
             minZoom: 1,
             maxZoom: 28,
             minNativeZoom: 0,
-            maxNativeZoom: 18
+            maxNativeZoom: 28
         });
         layer_ss_0;
         map.addLayer(layer_ss_0);
@@ -111,19 +110,10 @@
             });
             var popupContent = '<table>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['fid'] !== null ? autolinker.link(feature.properties['fid'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>Tree Name</strong><br />' + (feature.properties['Name(Tree)'] !== null ? autolinker.link(feature.properties['Name(Tree)'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['id'] !== null ? autolinker.link(feature.properties['id'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2"><strong>Name(Tree)</strong><br />' + (feature.properties['Name(Tree)'] !== null ? autolinker.link(feature.properties['Name(Tree)'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['Descriptio'] !== null ? autolinker.link(feature.properties['Descriptio'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['Date'] !== null ? autolinker.link(feature.properties['Date'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>Species</strong><br />' + (feature.properties['Descriptio'] !== null ? autolinker.link(feature.properties['Descriptio'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <td colspan="2">' + (feature.properties['Photo'] !== null ? '<img src="images/' + String(feature.properties['Photo']).replace(/[\\\/:]/g, '_').trim() + '" style=" max-height: 250px;">' : '') + '</td>\
@@ -141,7 +131,7 @@
                 case 'amstel king':
                     return {
                 pane: 'pane_nust_not_final_1',
-                radius: 10,
+                radius: 6,
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -157,7 +147,7 @@
                 case 'Amstel king':
                     return {
                 pane: 'pane_nust_not_final_1',
-                radius: 10,
+                radius: 6,
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -173,7 +163,7 @@
                 case 'bakain':
                     return {
                 pane: 'pane_nust_not_final_1',
-                radius: 10,
+                radius: 6,
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -189,7 +179,7 @@
                 case 'between razi\'s':
                     return {
                 pane: 'pane_nust_not_final_1',
-                radius: 10,
+                radius: 6,
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -205,7 +195,7 @@
                 case 'bishop tree':
                     return {
                 pane: 'pane_nust_not_final_1',
-                radius: 10,
+                radius: 6,
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -221,7 +211,7 @@
                 case 'bismarckia palm':
                     return {
                 pane: 'pane_nust_not_final_1',
-                radius: 10,
+                radius: 6,
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -237,7 +227,7 @@
                 case 'blue jacaranda':
                     return {
                 pane: 'pane_nust_not_final_1',
-                radius: 10,
+                radius: 6,
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -253,7 +243,7 @@
                 case 'brazilian pepper tree':
                     return {
                 pane: 'pane_nust_not_final_1',
-                radius: 10,
+                radius: 6,
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -269,7 +259,7 @@
                 case 'casia glauca':
                     return {
                 pane: 'pane_nust_not_final_1',
-                radius: 10,
+                radius: 6,
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -285,7 +275,7 @@
                 case 'cassia glauca':
                     return {
                 pane: 'pane_nust_not_final_1',
-                radius: 10,
+                radius: 6,
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -301,7 +291,7 @@
                 case 'Cassia glauca':
                     return {
                 pane: 'pane_nust_not_final_1',
-                radius: 10,
+                radius: 6,
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -317,7 +307,7 @@
                 case 'chinar':
                     return {
                 pane: 'pane_nust_not_final_1',
-                radius: 10,
+                radius: 6,
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -333,7 +323,7 @@
                 case 'cutted one':
                     return {
                 pane: 'pane_nust_not_final_1',
-                radius: 10,
+                radius: 6,
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -349,7 +339,7 @@
                 case 'kangi palm':
                     return {
                 pane: 'pane_nust_not_final_1',
-                radius: 10,
+                radius: 6,
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -365,7 +355,7 @@
                 case 'Nice ground':
                     return {
                 pane: 'pane_nust_not_final_1',
-                radius: 10,
+                radius: 6,
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -381,7 +371,7 @@
                 case 'nice ground 2':
                     return {
                 pane: 'pane_nust_not_final_1',
-                radius: 10,
+                radius: 6,
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -397,7 +387,7 @@
                 case 'nice ground 3(out)':
                     return {
                 pane: 'pane_nust_not_final_1',
-                radius: 10,
+                radius: 6,
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -413,7 +403,7 @@
                 case 'olive':
                     return {
                 pane: 'pane_nust_not_final_1',
-                radius: 10,
+                radius: 6,
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -429,7 +419,7 @@
                 case 'phoenix palm':
                     return {
                 pane: 'pane_nust_not_final_1',
-                radius: 10,
+                radius: 6,
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -445,7 +435,7 @@
                 case 'phoniex palm':
                     return {
                 pane: 'pane_nust_not_final_1',
-                radius: 10,
+                radius: 6,
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -461,7 +451,7 @@
                 case 'pilkhan':
                     return {
                 pane: 'pane_nust_not_final_1',
-                radius: 10,
+                radius: 6,
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -477,7 +467,7 @@
                 case 'pine':
                     return {
                 pane: 'pane_nust_not_final_1',
-                radius: 10,
+                radius: 6,
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -493,7 +483,7 @@
                 case 'Pine':
                     return {
                 pane: 'pane_nust_not_final_1',
-                radius: 10,
+                radius: 6,
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -509,7 +499,7 @@
                 case 'putajin':
                     return {
                 pane: 'pane_nust_not_final_1',
-                radius: 10,
+                radius: 6,
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -525,7 +515,7 @@
                 case 'RAZI':
                     return {
                 pane: 'pane_nust_not_final_1',
-                radius: 10,
+                radius: 6,
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -541,7 +531,7 @@
                 case 'razi tree':
                     return {
                 pane: 'pane_nust_not_final_1',
-                radius: 10,
+                radius: 6,
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -557,7 +547,7 @@
                 case 'ritha':
                     return {
                 pane: 'pane_nust_not_final_1',
-                radius: 10,
+                radius: 6,
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -573,7 +563,7 @@
                 case 'river tea':
                     return {
                 pane: 'pane_nust_not_final_1',
-                radius: 10,
+                radius: 6,
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -589,7 +579,7 @@
                 case 'rubber tree':
                     return {
                 pane: 'pane_nust_not_final_1',
-                radius: 10,
+                radius: 6,
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -605,7 +595,7 @@
                 case 'spiny fiddlewood':
                     return {
                 pane: 'pane_nust_not_final_1',
-                radius: 10,
+                radius: 6,
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -621,7 +611,7 @@
                 case 'stericulia':
                     return {
                 pane: 'pane_nust_not_final_1',
-                radius: 10,
+                radius: 6,
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -637,7 +627,7 @@
                 case 'sufaida':
                     return {
                 pane: 'pane_nust_not_final_1',
-                radius: 10,
+                radius: 6,
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -653,7 +643,7 @@
                 case 'sukhchain':
                     return {
                 pane: 'pane_nust_not_final_1',
-                radius: 10,
+                radius: 6,
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -669,7 +659,7 @@
                 case 'tree(unknown)':
                     return {
                 pane: 'pane_nust_not_final_1',
-                radius: 10,
+                radius: 6,
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -685,7 +675,7 @@
                 case 'unknown':
                     return {
                 pane: 'pane_nust_not_final_1',
-                radius: 10,
+                radius: 6,
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -701,7 +691,7 @@
                 case 'white mulberry':
                     return {
                 pane: 'pane_nust_not_final_1',
-                radius: 10,
+                radius: 6,
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -717,7 +707,7 @@
                 default:
                     return {
                 pane: 'pane_nust_not_final_1',
-                radius: 10,
+                radius: 6,
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -750,8 +740,8 @@
                 return L.circleMarker(latlng, style_nust_not_final_1_0(feature));
             },
         });
-        var cluster_nust_not_final_1 = new L.MarkerClusterGroup({showCoverageOnHover: false,
-            spiderfyDistanceMultiplier: 2});
+        var cluster_nust_not_final_1 = new L.MarkerClusterGroup({showCoverageOnHover: true,
+            spiderfyDistanceMultiplier: 1,maxClusterRadius:25});
         cluster_nust_not_final_1.addLayer(layer_nust_not_final_1);
 
         bounds_group.addLayer(layer_nust_not_final_1);
@@ -836,16 +826,16 @@
         });
         // bounds_group.addLayer(layer_PAK_adm2_2);
         // map.addLayer(layer_PAK_adm2_2);
-            var title = new L.Control();
-            title.onAdd = function (map) {
-                this._div = L.DomUtil.create('div', 'info');
-                this.update();
-                return this._div;
-            };
-            title.update = function () {
-                this._div.innerHTML = '<h2>Herbarium</h2>';
-            };
-            title.addTo(map);
+            // var title = new L.Control();
+            // title.onAdd = function (map) {
+            //     this._div = L.DomUtil.create('div', 'info');
+            //     this.update();
+            //     return this._div;
+            // };
+            // title.update = function () {
+            //     this._div.innerHTML = '<h2>Herbarium</h2>';
+            // };
+            // title.addTo(map);
         var baseMaps = {};
         L.control.layers(baseMaps,{'<img src="legend/PAK_adm2_2.png" /> PAK_adm2': layer_PAK_adm2_2,'Herbarium<br /><table><tr><td style="text-align: center;"><img src="legend/nust_not_final_1_amstelking0.png" /></td><td>amstel king</td></tr><tr><td style="text-align: center;"><img src="legend/nust_not_final_1_Amstelking1.png" /></td><td>Amstel king</td></tr><tr><td style="text-align: center;"><img src="legend/nust_not_final_1_bakain2.png" /></td><td>bakain</td></tr><tr><td style="text-align: center;"><img src="legend/nust_not_final_1_betweenrazis3.png" /></td><td>between razi\'s</td></tr><tr><td style="text-align: center;"><img src="legend/nust_not_final_1_bishoptree4.png" /></td><td>bishop tree</td></tr><tr><td style="text-align: center;"><img src="legend/nust_not_final_1_bismarckiapalm5.png" /></td><td>bismarckia palm</td></tr><tr><td style="text-align: center;"><img src="legend/nust_not_final_1_bluejacaranda6.png" /></td><td>blue jacaranda</td></tr><tr><td style="text-align: center;"><img src="legend/nust_not_final_1_brazilianpeppertree7.png" /></td><td>brazilian pepper tree</td></tr><tr><td style="text-align: center;"><img src="legend/nust_not_final_1_casiaglauca8.png" /></td><td>casia glauca</td></tr><tr><td style="text-align: center;"><img src="legend/nust_not_final_1_cassiaglauca9.png" /></td><td>cassia glauca</td></tr><tr><td style="text-align: center;"><img src="legend/nust_not_final_1_Cassiaglauca10.png" /></td><td>Cassia glauca</td></tr><tr><td style="text-align: center;"><img src="legend/nust_not_final_1_chinar11.png" /></td><td>chinar</td></tr><tr><td style="text-align: center;"><img src="legend/nust_not_final_1_cuttedone12.png" /></td><td>cutted one</td></tr><tr><td style="text-align: center;"><img src="legend/nust_not_final_1_kangipalm13.png" /></td><td>kangi palm</td></tr><tr><td style="text-align: center;"><img src="legend/nust_not_final_1_Niceground14.png" /></td><td>Nice ground</td></tr><tr><td style="text-align: center;"><img src="legend/nust_not_final_1_niceground215.png" /></td><td>nice ground 2</td></tr><tr><td style="text-align: center;"><img src="legend/nust_not_final_1_niceground3out16.png" /></td><td>nice ground 3(out)</td></tr><tr><td style="text-align: center;"><img src="legend/nust_not_final_1_olive17.png" /></td><td>olive</td></tr><tr><td style="text-align: center;"><img src="legend/nust_not_final_1_phoenixpalm18.png" /></td><td>phoenix palm</td></tr><tr><td style="text-align: center;"><img src="legend/nust_not_final_1_phoniexpalm19.png" /></td><td>phoniex palm</td></tr><tr><td style="text-align: center;"><img src="legend/nust_not_final_1_pilkhan20.png" /></td><td>pilkhan</td></tr><tr><td style="text-align: center;"><img src="legend/nust_not_final_1_pine21.png" /></td><td>pine</td></tr><tr><td style="text-align: center;"><img src="legend/nust_not_final_1_Pine22.png" /></td><td>Pine</td></tr><tr><td style="text-align: center;"><img src="legend/nust_not_final_1_putajin23.png" /></td><td>putajin</td></tr><tr><td style="text-align: center;"><img src="legend/nust_not_final_1_RAZI24.png" /></td><td>RAZI</td></tr><tr><td style="text-align: center;"><img src="legend/nust_not_final_1_razitree25.png" /></td><td>razi tree</td></tr><tr><td style="text-align: center;"><img src="legend/nust_not_final_1_ritha26.png" /></td><td>ritha</td></tr><tr><td style="text-align: center;"><img src="legend/nust_not_final_1_rivertea27.png" /></td><td>river tea</td></tr><tr><td style="text-align: center;"><img src="legend/nust_not_final_1_rubbertree28.png" /></td><td>rubber tree</td></tr><tr><td style="text-align: center;"><img src="legend/nust_not_final_1_spinyfiddlewood29.png" /></td><td>spiny fiddlewood</td></tr><tr><td style="text-align: center;"><img src="legend/nust_not_final_1_stericulia30.png" /></td><td>stericulia</td></tr><tr><td style="text-align: center;"><img src="legend/nust_not_final_1_sufaida31.png" /></td><td>sufaida</td></tr><tr><td style="text-align: center;"><img src="legend/nust_not_final_1_sukhchain32.png" /></td><td>sukhchain</td></tr><tr><td style="text-align: center;"><img src="legend/nust_not_final_1_treeunknown33.png" /></td><td>tree(unknown)</td></tr><tr><td style="text-align: center;"><img src="legend/nust_not_final_1_unknown34.png" /></td><td>unknown</td></tr><tr><td style="text-align: center;"><img src="legend/nust_not_final_1_whitemulberry35.png" /></td><td>white mulberry</td></tr><tr><td style="text-align: center;"><img src="legend/nust_not_final_1_36.png" /></td><td></td></tr></table>': cluster_nust_not_final_1,"ss": layer_ss_0,}).addTo(map);
         setBounds();
